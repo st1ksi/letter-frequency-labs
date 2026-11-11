@@ -1,0 +1,37 @@
+{
+  "version": "0.1.16",
+  "tests": 34,
+  "boundary_cases": 17,
+  "first_candidate_passed": 17,
+  "second_candidate_passed": 16,
+  "accepted_passed": 17,
+  "counterexample": {
+    "values": [
+      100,
+      5
+    ],
+    "width": 50,
+    "expected": [
+      50,
+      3
+    ],
+    "before": [
+      50,
+      2
+    ],
+    "after": [
+      50,
+      3
+    ]
+  },
+  "fix_commit": "94ce441e01892efc4a325d8a35d06650c9acda9c",
+  "upstream": {
+    "repo": "https://github.com/zlib-ng/zanalyze",
+    "pin": "4cc0b3fd286c2db5ec4fdc1d2637eaab2b0ed515",
+    "author": "Hans Kristian Rosbach",
+    "license": "Zlib"
+  },
+  "peer_issue": "https://github.com/ST1KSI5/letter-frequency-labs/issues/1",
+  "peer_reply": "https://github.com/ST1KSI5/letter-frequency-labs/issues/1#issuecomment-6802073212",
+  "replication": "Fresh remote clone, checkout 682043d and documented Python command reproduced [50,2]; same physical machine; both accounts owned by one student."
+}
