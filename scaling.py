@@ -9,4 +9,4 @@ def scale_bars(values, width=50):
     peak = max(values, default=0)
     if not peak:
         return [0] * len(values)
-    return [max(1, round(v / peak * width)) if v else 0 for v in values]
+    return [max(1, (v * width + peak // 2) // peak) if v else 0 for v in values]

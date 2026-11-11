@@ -7,6 +7,7 @@ import io
 from vendor.zanalyze_histogram import print_histogram
 import sys
 from pathlib import Path
+from scaling import scale_bars
 
 def count_letters(text):
     counts = {}
@@ -47,10 +48,9 @@ def render_histogram(counts, min_count=1, chart_style="ascii"):
         return result
     if chart_style != "ascii":
         raise ValueError("Невідомий стиль діаграми.")
-    max_count = max(visible.values())
+    widths = scale_bars(list(value for _, value in sorted(visible.items())))
     lines = [f"Літера | Діаграма (максимум 50 символів; поріг: {min_count}) | Кількість"]
-    for letter, count in sorted(visible.items()):
-        width = max(1, (count * 50 + max_count // 2) // max_count)
+    for (letter, count), width in zip(sorted(visible.items()), widths):
         lines.append(f"{letter} {'#' * width} {count}")
     lines.append(f"Усього літер: {sum(counts.values())}; різних: {len(counts)}")
     if len(visible) != len(counts):
