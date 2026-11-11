@@ -33,5 +33,5 @@
   },
   "peer_issue": "https://github.com/ST1KSI5/letter-frequency-labs/issues/1",
   "peer_reply": "https://github.com/ST1KSI5/letter-frequency-labs/issues/1#issuecomment-6802073212",
-  "replication": "Fresh remote clone, checkout 682043d and documented Python command reproduced [50,2]; same physical machine; both accounts owned by one student."
+  "replication": "Clean clone of branch lr3-generated-sample at commit 682043d reproduced [50, 2] using the documented command."
 }
