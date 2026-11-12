@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Частотний аналіз літер</title>
+<style>
+body{font:18px/1.6 system-ui,sans-serif;color:#17242c;background:#f5f7f8;margin:0}
+main{max-width:860px;margin:50px auto;padding:32px;background:#fff;border-radius:12px}
+h1{font-size:2.3rem;line-height:1.15}h2{margin-top:2em}a{color:#075b79}
+.download{display:inline-block;background:#075b79;color:white;text-decoration:none;padding:12px 22px;border-radius:6px}
+pre{padding:16px;background:#eff3f5;white-space:pre-wrap;overflow-wrap:anywhere}code{font-family:Consolas,monospace}
+@media(max-width:600px){main{margin:0;padding:22px}h1{font-size:1.8rem}}
+</style>
+<main>
+<p>Навчальна консольна утиліта · Варіант 7</p>
+<h1>Побачте частоту літер у тексті</h1>
+<p>Введіть рядок або відкрийте текстовий файл UTF-8. Програма порахує літери, об’єднає великі й малі та покаже діаграму. Цифри, пробіли й розділові знаки не враховуються.</p>
+<p><a class="download" href="https://github.com/st1ksi/letter-frequency-labs/releases/download/v1.0.0/letter-frequency-1.0.0-windows-x64.zip">Завантажити v1.0.0 для Windows x64</a></p>
+<p>У ZIP — готова програма з вбудованим середовищем виконання. Встановлювати Python або редактор коду не потрібно. Розпакуйте весь архів у власну папку; запускайте EXE через консоль, щоб результат залишався на екрані.</p>
+<h2>Перший запуск</h2>
+<pre>letter-frequency.exe
+Введіть текст: Абба! 123
+а ################################################## 2
+б ################################################## 2
+Усього літер: 4; різних: 2</pre>
+<p>Текст показано зі скороченим службовим заголовком; частоти точні, найбільший стовпчик має 50 символів.</p>
+<h2>Файл та фільтр</h2>
+<pre>letter-frequency.exe --file sample.txt
+letter-frequency.exe --file sample.txt --min-count 2
+letter-frequency.exe --file sample.txt --chart-style blocks</pre>
+<p>Поріг включний: за <code>--min-count 2</code> видно літери з частотою від двох, а загальні підсумки стосуються початкового тексту. Режим <code>blocks</code> будує діаграму блоками Unicode.</p>
+<h2>Якщо дані не підходять</h2>
+<p>Порожній файл або текст без літер викликає зрозуміле повідомлення про помилку, код завершення — 2. Файл іншого кодування потрібно зберегти у UTF-8. Великі й малі літери рахуються разом; схожі літери різних абеток залишаються різними.</p>
+<h2>Випуск і перевірка</h2>
+<p><a href="https://github.com/st1ksi/letter-frequency-labs/releases/tag/v1.0.0">Файли випуску та контрольна сума</a> · <a href="https://github.com/st1ksi/letter-frequency-labs/blob/main/CHANGELOG.md">Що змінилося</a> · <a href="https://github.com/st1ksi/letter-frequency-labs/blob/main/ПОХОДЖЕННЯ.md">Походження та умови поширення</a></p>
+<p>Автор навчального проєкту — Кононов Андрій, ПЗ2511 / 921. Використано рендерер zanalyze під zlib та інструменти ШІ; точну атрибуцію наведено в репозиторії. Власні внески — zlib, без гарантій. Windows x64 перевірено на цьому комп’ютері; інші платформи окремо не перевірялися.</p>
+</main>
+</html>
