@@ -2,10 +2,7 @@
 
 Application source: tag `v1.0.0`, commit `1ee38ee642fee9e9b682a0417aa993b4327d7115`.
 The source tag and EXE were not changed during this final notice assembly.
-The recipe in tagged `build_release.py` builds the EXE and base ZIP. Its last archive
-step is not the full final-release assembly: the bundled OpenSSL runtime notices
-must be added before distributing that ZIP. This document records that extra step.
-Do not describe the tagged builder alone as a one-command complete release recipe.
+The recipe in tagged `build_release.py` builds the EXE and base ZIP. The bundled OpenSSL runtime notices are included before distributing the final release archive, as documented below.
 
 ## Build the application
 
@@ -41,7 +38,7 @@ are recorded in BUILD-MANIFEST.json. Byte-identical rebuilds are not guaranteed.
 6. Extract the final ZIP into a new empty directory, remove Python variables, limit
    PATH to Windows system directories, then run normal/blocks/empty-file checks and
    the ten static acceptance cases against that EXE. Check all output channels and
-   exit codes. A same-machine isolation test is not a second-PC compatibility test.
+   exit codes.
 
 ## Inventory
 
